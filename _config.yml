@@ -17,7 +17,7 @@ title: Sudeep On Software
 email: sudeepreddyeleti@gmail.com
 description: > #
     My site for demonstrating and sharing my thoughts about different software development tools and processes.
-baseurl: "/" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "localhost:4000" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: sreleti
 github_username:  sreleti
