@@ -22,7 +22,7 @@ permalink:        pretty
 title:            Sudeep On Software
 tagline:          'sudeepreddyeleti@gmail.com'
 description:      'Learning and giving back to the software development community.'
-url:              http://127.0.0.1:4000
+url:              https://127.0.0.1:4000
 baseurl:          /
 twitter_username: sreleti
 linkedin_username: sreleti
