@@ -12,7 +12,7 @@ gems:
   - pygments.rb
 
 # Dependencies
-markdown:         redcarpet
+markdown:         kramdown
 highlighter:      pygments
 
 # Permalinks
