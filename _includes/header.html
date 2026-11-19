@@ -1,0 +1,4 @@
+<header class="top">
+  <div><a class="brand" href="/">sudeep.twin</a><span class="crumb">/ <a href="/blog/">blog</a>{% if page.layout == "post" %} / {{ page.slug | default: page.title | downcase }}{% elsif page.title and page.title != "Blog" %} / {{ page.title | downcase }}{% endif %}</span></div>
+  <nav aria-label="Theme" id="themes"></nav>
+</header>

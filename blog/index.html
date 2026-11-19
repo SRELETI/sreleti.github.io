@@ -2,36 +2,20 @@
 layout: default
 title: Blog
 ---
+<section class="post-head">
+  <p class="eyebrow">Sudeep On Software</p>
+  <p class="lede">{{ site.description }}</p>
+</section>
 
-<div class="posts">
-  {% for post in paginator.posts %}
-  <div class="post">
-    <h1 class="post-title">
-      <a href="{{ post.url }}">
-        {{ post.title }}
-      </a>
-    </h1>
-
-    <span class="post-date">{{ post.date | date_to_string }}</span>
-
-    {{ post.content }}
+<section aria-label="Posts">
+  <p class="cmd"><span class="ps">you@web:~$</span> ls -t blog/ &nbsp;<span>({{ site.posts.size }} posts)</span></p>
+  <div class="listing">
+    {% for post in site.posts %}
+    <article class="entry">
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+      <p>{{ post.content | replace: "</h", " </h" | replace: "</p>", " </p>" | strip_html | normalize_whitespace | truncatewords: 24 }}</p>
+    </article>
+    {% endfor %}
   </div>
-  {% endfor %}
-</div>
-
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-item older" href="/blog/page{{paginator.next_page}}/">Older</a>
-  {% else %}
-    <span class="pagination-item older">Older</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="/blog/">Newer</a>
-    {% else %}
-      <a class="pagination-item newer" href="/blog/page{{paginator.previous_page}}/">Newer</a>
-    {% endif %}
-  {% else %}
-    <span class="pagination-item newer">Newer</span>
-  {% endif %}
-</div>
+</section>

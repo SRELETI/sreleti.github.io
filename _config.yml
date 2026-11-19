@@ -30,8 +30,6 @@ linkedin_username: sreleti
 github:
   repo:           https://github.com/SRELETI
 
-paginate:         5
-paginate_path:    "/blog/page:num/"
 
 #'Mark Otto' #Credits for hyde template
 

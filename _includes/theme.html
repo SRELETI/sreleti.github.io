@@ -1,0 +1,20 @@
+<script>
+(function () {
+  var THEMES = [{ id: "terminal", label: "Terminal" }, { id: "lightgreen", label: "Light green" }, { id: "light", label: "Light" }];
+  var nav = document.getElementById("themes");
+  var saved = null;
+  try { saved = localStorage.getItem("twin-theme"); } catch (e) {}
+  function setTheme(id) {
+    document.body.className = "th-" + id;
+    Array.prototype.forEach.call(nav.children, function (b) { b.setAttribute("aria-pressed", String(b.dataset.id === id)); });
+    try { localStorage.setItem("twin-theme", id); } catch (e) {}
+  }
+  THEMES.forEach(function (t) {
+    var b = document.createElement("button");
+    b.className = "tbtn"; b.type = "button"; b.textContent = t.label; b.dataset.id = t.id;
+    b.addEventListener("click", function () { setTheme(t.id); });
+    nav.appendChild(b);
+  });
+  setTheme(THEMES.some(function (t) { return t.id === saved; }) ? saved : "terminal");
+})();
+</script>
