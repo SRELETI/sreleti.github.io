@@ -12,7 +12,7 @@ I'm Sudeep Reddy Eleti, a Lead Infrastructure Engineer at [BenchSci](https://www
 Most of my time goes into Emet, BenchSci's agentic system for scientists. Think of it as Cursor for the lab. My parts of it:
 
 * **Agent development:** building the system and running it in production.
-* **Evaluation:** our LLM evals and red-teaming.
+* **Evaluation:** red-teaming.
 * **Operations:** observability and incident management for the live system.
 
 ## Outside work
