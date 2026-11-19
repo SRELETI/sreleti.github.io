@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sudeep's digital twin</title>
-<meta name="description" content="Sudeep Reddy Eleti, Lead Infrastructure Engineer. Ask my digital twin about my work, education and projects.">
+<meta name="description" content="Sudeep Reddy Eleti, Lead Infrastructure Engineer. Ask my digital twin about my work, projects and writing.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap">
@@ -99,7 +99,7 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-si
 (function () {
   var ANSWERS = {
     experience: {
-      thinking: ["Work history question. Load the resume index and list roles, newest first.", "Education was not asked for, so leave it out."],
+      thinking: ["Work history question. Load the resume index and list roles, newest first."],
       tools: [
         { call: 'search_resume(section="experience")', result: "entries found in resume.md" },
         { call: 'get_role(org="BenchSci")', result: "Lead Infrastructure Engineer, Toronto" }
@@ -116,29 +116,21 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-si
       paragraphs: ["I work on Emet, BenchSci's agentic system for scientists. Think of it as Cursor for the lab. Three parts of it are mine:"],
       bullets: [
         { text: "Agent development: building the system and running it in production." },
-        { text: "Evaluation: I set up our LLM evals and red-teaming." },
+        { text: "Evaluation: red-teaming." },
         { text: "Operations: observability and incident management for the live system." }
       ]
     },
-    education: {
-      thinking: ["Education question. Pull degrees, newest first."],
-      tools: [{ call: 'search_resume(section="education")', result: "entries found in resume.md" }],
-      paragraphs: ["Two degrees in computing, one in India and one in Canada."],
-      cards: [
-        { mono: "UW", name: "University of Waterloo", role: "MMath, Computer Science", when: "2015" },
-        { mono: "JN", name: "JNTU Hyderabad", role: "BS, Information Technology", when: "2011" }
-      ]
-    },
     projects: {
-      thinking: ["Side projects. Check GitHub and the blog index.", "Lead with the systems-heavy ones, since that matches my role."],
+      thinking: ["Side projects. Check GitHub and the blog index.", "Lead with the agent projects, then the systems ones."],
       tools: [
         { call: 'list_repos(user="sreleti")', result: "ok · github.com/sreleti" },
         { call: 'read_file("blog/index.md")', result: "ok · sreleti.github.io/blog" }
       ],
-      paragraphs: ["Outside work I mostly build low-level and infra things:"],
+      paragraphs: ["Outside work I build agents and low-level infrastructure:"],
       bullets: [
-        { text: "A filesystem written from scratch on top of a raw block device." },
+        { text: "A grocery shopping agent that shops for deals on Flipp." },
         { text: "A code-execution sandbox for AI agents." },
+        { text: "A filesystem written from scratch on top of a raw block device." },
         { text: "A feature for the open-source cal.diy scheduler: a limit on visible booking slots per day." }
       ]
     },
@@ -164,7 +156,6 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-si
   var CHIPS = [
     { key: "experience", label: "Where have you worked?" },
     { key: "benchsci", label: "What do you do at BenchSci?" },
-    { key: "education", label: "Where did you study?" },
     { key: "projects", label: "What do you build outside work?" },
     { key: "writing", label: "What have you written?" }
   ];
@@ -178,7 +169,6 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-si
   function route(q) {
     var s = q.toLowerCase();
     if (/(benchsci|emet|current|right now|day to day|what do you do)/.test(s)) return "benchsci";
-    if (/(study|school|degree|education|university|waterloo|college)/.test(s)) return "education";
     if (/(blog|post|write|wrote|written|article)/.test(s)) return "writing";
     if (/(project|side|build|github|open source|hobby)/.test(s)) return "projects";
     if (/(work|job|experience|employ|company|career|resume)/.test(s)) return "experience";
@@ -189,7 +179,7 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-si
     return {
       thinking: ["No notes match this. Say so instead of guessing."],
       tools: [{ call: 'search_notes(query="' + q.replace(/"/g, "'") + '")', result: "0 matches" }],
-      paragraphs: ["I don't have notes on that yet, so I won't make something up. Try asking about my work, education, side projects or writing."]
+      paragraphs: ["I don't have notes on that yet, so I won't make something up. Try asking about my work, side projects or writing."]
     };
   }
 
