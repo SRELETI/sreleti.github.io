@@ -15,14 +15,14 @@ Most of my time goes into Emet, BenchSci's agentic system for scientists. Think 
 * **Evaluation:** red-teaming.
 * **Operations:** observability and incident management for the live system.
 
-## Outside work
+## Projects
 
-I mostly build low-level and infrastructure things: a filesystem written from scratch on a raw block device, a code-execution sandbox for AI agents, and a daily booking-slot limit for the open-source cal.diy scheduler.
+Outside work I build agents and low-level infrastructure:
 
-## Education
-
-* MMath, Computer Science, University of Waterloo (2015)
-* BS, Information Technology, JNTU Hyderabad (2011)
+* **Grocery shopping agent:** an AI agent that shops for deals on Flipp.
+* **Code-execution sandbox for AI agents:** a safe place for agents to run the code they write.
+* **Filesystem from scratch:** built on top of a raw block device.
+* **cal.diy:** added a daily limit on visible booking slots to the open-source scheduler.
 
 ## Elsewhere
 
